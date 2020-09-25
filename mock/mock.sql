@@ -173,7 +173,7 @@ insert into restaurant (name, tp_restaurant_id) values ('Bobzeras', 1);
 insert into restaurant (name, tp_restaurant_id) values ('Soft Country Café', 1);
 insert into restaurant (name, tp_restaurant_id) values ('China Food', 2);
 insert into restaurant (name, tp_restaurant_id) values ('Comida de Belem', 9);
-insert into restaurant (name, tp_restaurant_id) values ('Burguer Queen', 1);
+insert into restaurant (name, tp_restaurant_id) values ('Burguer Cool', 1);
 insert into restaurant (name, tp_restaurant_id) values ('Pizzaria pizza certa', 11);
 insert into restaurant (name, tp_restaurant_id) values ('GuacaDuro', 7);
 insert into restaurant (name, tp_restaurant_id) values ('Gandhi', 8);
@@ -188,7 +188,40 @@ insert into restaurant (name, tp_restaurant_id) values ('SurraxcoDaLaje', 10);
 insert into restaurant (name, tp_restaurant_id) values ('Sobororeaux', 6);
 insert into restaurant (name, tp_restaurant_id) values ('Restaurante BonApetit', 6);
 
+select * from restaurant;
+
 -- create tp_order
 insert into tp_order (name) values ('restaurant');
 insert into tp_order (name) values ('delivery');
 insert into tp_order (name) values ('pickup');
+
+select * from tp_order;
+
+-- create last cases
+insert into last_cases (accepts_meal_voucher, tp_restaurant_id, order_time, distance, tp_order_id, sit_place, restaurant_id) VALUES (FALSE,2,20,2,1,FALSE,1);
+insert into last_cases (accepts_meal_voucher, tp_restaurant_id, order_time, distance, tp_order_id, sit_place, restaurant_id) VALUES (TRUE,1,30,4,2,TRUE,2);
+insert into last_cases (accepts_meal_voucher, tp_restaurant_id, order_time, distance, tp_order_id, sit_place, restaurant_id) VALUES (TRUE,8,45,5,1,FALSE,3);
+insert into last_cases (accepts_meal_voucher, tp_restaurant_id, order_time, distance, tp_order_id, sit_place, restaurant_id) VALUES (FALSE,4,20,25,1,FALSE,4);
+insert into last_cases (accepts_meal_voucher, tp_restaurant_id, order_time, distance, tp_order_id, sit_place, restaurant_id) VALUES (TRUE,3,45,1,2,TRUE,5);
+insert into last_cases (accepts_meal_voucher, tp_restaurant_id, order_time, distance, tp_order_id, sit_place, restaurant_id) VALUES (TRUE,1,30,5,3,FALSE,6);
+insert into last_cases (accepts_meal_voucher, tp_restaurant_id, order_time, distance, tp_order_id, sit_place, restaurant_id) VALUES (TRUE,3,25,12,1,TRUE,7);
+insert into last_cases (accepts_meal_voucher, tp_restaurant_id, order_time, distance, tp_order_id, sit_place, restaurant_id) VALUES (TRUE,1,15,2.5,3,TRUE,8);
+insert into last_cases (accepts_meal_voucher, tp_restaurant_id, order_time, distance, tp_order_id, sit_place, restaurant_id) VALUES (TRUE,1,30,10,3,TRUE,9);
+insert into last_cases (accepts_meal_voucher, tp_restaurant_id, order_time, distance, tp_order_id, sit_place, restaurant_id) VALUES (TRUE,2,35,15,1,FALSE,10);
+insert into last_cases (accepts_meal_voucher, tp_restaurant_id, order_time, distance, tp_order_id, sit_place, restaurant_id) VALUES (FALSE,9,15,12,1,FALSE,11);
+insert into last_cases (accepts_meal_voucher, tp_restaurant_id, order_time, distance, tp_order_id, sit_place, restaurant_id) VALUES (FALSE,1,15,12,2,FALSE,12);
+insert into last_cases (accepts_meal_voucher, tp_restaurant_id, order_time, distance, tp_order_id, sit_place, restaurant_id) VALUES (FALSE,11,120,6,1,FALSE,13);
+insert into last_cases (accepts_meal_voucher, tp_restaurant_id, order_time, distance, tp_order_id, sit_place, restaurant_id) VALUES (FALSE,7,45,20,1,TRUE,14);
+insert into last_cases (accepts_meal_voucher, tp_restaurant_id, order_time, distance, tp_order_id, sit_place, restaurant_id) VALUES (TRUE,8,10,4,3,FALSE,15);
+insert into last_cases (accepts_meal_voucher, tp_restaurant_id, order_time, distance, tp_order_id, sit_place, restaurant_id) VALUES (FALSE,6,25,40,1,TRUE,16);
+insert into last_cases (accepts_meal_voucher, tp_restaurant_id, order_time, distance, tp_order_id, sit_place, restaurant_id) VALUES (TRUE,10,10,15,1,TRUE,17);
+insert into last_cases (accepts_meal_voucher, tp_restaurant_id, order_time, distance, tp_order_id, sit_place, restaurant_id) VALUES (TRUE,1,30,10,3,FALSE,18);
+insert into last_cases (accepts_meal_voucher, tp_restaurant_id, order_time, distance, tp_order_id, sit_place, restaurant_id) VALUES (TRUE,7,15,4.5,2,TRUE,19);
+insert into last_cases (accepts_meal_voucher, tp_restaurant_id, order_time, distance, tp_order_id, sit_place, restaurant_id) VALUES (FALSE,10,10,3.5,1,FALSE,20);
+insert into last_cases (accepts_meal_voucher, tp_restaurant_id, order_time, distance, tp_order_id, sit_place, restaurant_id) VALUES (TRUE,2,15,22,1,TRUE,21);
+insert into last_cases (accepts_meal_voucher, tp_restaurant_id, order_time, distance, tp_order_id, sit_place, restaurant_id) VALUES (FALSE,5,25,2,3,TRUE,22);
+insert into last_cases (accepts_meal_voucher, tp_restaurant_id, order_time, distance, tp_order_id, sit_place, restaurant_id) VALUES (TRUE,10,20,5,1,TRUE,23);
+insert into last_cases (accepts_meal_voucher, tp_restaurant_id, order_time, distance, tp_order_id, sit_place, restaurant_id) VALUES (FALSE,6,40,25,2,TRUE,24);
+insert into last_cases (accepts_meal_voucher, tp_restaurant_id, order_time, distance, tp_order_id, sit_place, restaurant_id) VALUES (TRUE,6,25,8,1,TRUE,24);
+
+select * from last_cases;
