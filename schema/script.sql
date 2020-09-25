@@ -32,9 +32,9 @@ create unique index tp_restaurant_id_uindex on tp_restaurant (id);
 create table user_preference
 (
     user_id              integer             not null,
-    order_time_weight    integer default 0.4 not null,
+    order_time_weight    decimal default 0.4 not null,
     order_time_tolerance integer default 15  not null,
-    distance_weight      integer default 0.9 not null,
+    distance_weight      decimal default 0.9 not null,
     distance_tolerance   integer default 5   not null
 );
 
@@ -59,7 +59,7 @@ create table tp_restaurant_similarity
 (
     a_id  integer not null,
     b_id  integer not null,
-    value integer
+    value decimal
 );
 
 alter table tp_restaurant_similarity owner to postgres;
