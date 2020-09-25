@@ -69,7 +69,7 @@ alter table tp_restaurant_similarity owner to postgres;
 create table tp_order
 (
     id   serial  not null constraint tp_order_pk primary key,
-    name integer not null
+    name varchar not null
 );
 
 alter table tp_order owner to postgres;
