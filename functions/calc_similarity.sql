@@ -1,5 +1,5 @@
 CREATE OR REPLACE FUNCTION calc_similarity (
-    puser_id             INTEGER,
+    user_id              INTEGER,
     accepts_meal_voucher BOOLEAN,
     tp_restaurant_id     INTEGER,
     order_time           INTEGER,
@@ -35,13 +35,13 @@ BEGIN
         END IF;
 
         -- Order time plus tolerance is less than or equal to the time of the last case
-        IF order_time + (SELECT get_user_preference(puser_id, 'order_time_tolerance')) <= last_case.order_time THEN
-            similarity := similarity + (SELECT get_user_preference(puser_id, 'order_time_weight'));
+        IF order_time + (SELECT get_user_preference(user_id, 'order_time_tolerance')) <= last_case.order_time THEN
+            similarity := similarity + (SELECT get_user_preference(user_id, 'order_time_weight'));
         END IF;
 
         -- Distance plus tolerance is less than or equal to the distance of the last case
-        IF distance + (SELECT get_user_preference(puser_id, 'distance_tolerance')) <= last_case.distance THEN
-            similarity := similarity + (SELECT get_user_preference(puser_id, 'distance_weight'));
+        IF distance + (SELECT get_user_preference(user_id, 'distance_tolerance')) <= last_case.distance THEN
+            similarity := similarity + (SELECT get_user_preference(user_id, 'distance_weight'));
         END IF;
 
         -- Restaurant Type
