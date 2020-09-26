@@ -1,8 +1,10 @@
 -- Create admin user
 INSERT INTO "user" (name, email, password) VALUES ('gburich', 'gburich@gmail.com', 'abc');
+INSERT INTO "user" (name, email, password) VALUES ('admin', 'admin@gmail.com', 'abc');
 
+select * from "user";
 -- User preference
-INSERT INTO user_preference (user_id) values (1);
+SELECT * from user_preference;
 
 -- Create restaurant types
 INSERT INTO tp_restaurant (name) values ('Fast food');
