@@ -1,4 +1,4 @@
-CREATE OR REPLACE FUNCTION calcSimilarity (
+CREATE OR REPLACE FUNCTION calc_similarity (
     puser_id             integer,
     accepts_meal_voucher boolean,
     tp_restaurant_id     integer,
