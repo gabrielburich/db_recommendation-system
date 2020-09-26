@@ -222,6 +222,6 @@ insert into last_cases (accepts_meal_voucher, tp_restaurant_id, order_time, dist
 insert into last_cases (accepts_meal_voucher, tp_restaurant_id, order_time, distance, tp_order_id, sit_place, restaurant_id) VALUES (FALSE,5,25,2,3,TRUE,22);
 insert into last_cases (accepts_meal_voucher, tp_restaurant_id, order_time, distance, tp_order_id, sit_place, restaurant_id) VALUES (TRUE,10,20,5,1,TRUE,23);
 insert into last_cases (accepts_meal_voucher, tp_restaurant_id, order_time, distance, tp_order_id, sit_place, restaurant_id) VALUES (FALSE,6,40,25,2,TRUE,24);
-insert into last_cases (accepts_meal_voucher, tp_restaurant_id, order_time, distance, tp_order_id, sit_place, restaurant_id) VALUES (TRUE,6,25,8,1,TRUE,24);
+insert into last_cases (accepts_meal_voucher, tp_restaurant_id, order_time, distance, tp_order_id, sit_place, restaurant_id) VALUES (TRUE,6,25,8,1,TRUE,25);
 
 select * from last_cases;
