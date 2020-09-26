@@ -1,17 +1,17 @@
-CREATE OR REPLACE FUNCTION recommendsRestaurant (
-    user_id               integer,
-    page_size            integer,
-    accepts_meal_voucher boolean,
-    tp_restaurant_id     integer,
-    order_time           integer,
-    distance             integer,
-    tp_order_id          integer,
-    sit_place            boolean
+CREATE OR REPLACE FUNCTION recommends_restaurant (
+    user_id              INTEGER,
+    page_size            INTEGER,
+    accepts_meal_voucher BOOLEAN,
+    tp_restaurant_id     INTEGER,
+    order_time           INTEGER,
+    distance             INTEGER,
+    tp_order_id          INTEGER,
+    sit_place            BOOLEAN
 )
 RETURNS TABLE (
-    id               integer,
-    name             varchar,
-    tp_restaurant    varchar
+    id               INTEGER,
+    name             VARCHAR,
+    tp_restaurant    VARCHAR
 )
 LANGUAGE plpgsql AS $$
 DECLARE
@@ -22,7 +22,7 @@ BEGIN
         SELECT
                *
         FROM
-            calcsimilarity(
+            calc_similarity(
                 user_id,
                 accepts_meal_voucher,
                 tp_restaurant_id,
