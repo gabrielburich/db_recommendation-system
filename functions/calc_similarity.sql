@@ -1,15 +1,15 @@
 CREATE OR REPLACE FUNCTION calc_similarity (
-    puser_id             integer,
-    accepts_meal_voucher boolean,
-    tp_restaurant_id     integer,
-    order_time           integer,
-    distance             integer,
-    tp_order_id          integer,
-    sit_place            boolean
+    puser_id             INTEGER,
+    accepts_meal_voucher BOOLEAN,
+    tp_restaurant_id     INTEGER,
+    order_time           INTEGER,
+    distance             INTEGER,
+    tp_order_id          INTEGER,
+    sit_place            BOOLEAN
 )
 RETURNS TABLE (
-    id               integer,
-    similarity       decimal
+    id               INTEGER,
+    similarity       DECIMAL
 )
 LANGUAGE plpgsql AS $$
 DECLARE
