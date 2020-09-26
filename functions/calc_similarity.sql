@@ -35,13 +35,13 @@ BEGIN
         END IF;
 
         -- Order time plus tolerance is less than or equal to the time of the last case
-        IF order_time + (SELECT order_time_tolerance FROM user_preference WHERE user_id = puser_id) <= last_case.order_time THEN
-            similarity := similarity + 0.4;
+        IF order_time + (SELECT get_user_preference(puser_id, 'order_time_tolerance')) <= last_case.order_time THEN
+            similarity := similarity + (SELECT get_user_preference(puser_id, 'order_time_weight'));
         END IF;
 
         -- Distance plus tolerance is less than or equal to the distance of the last case
-        IF distance + (SELECT distance_tolerance FROM user_preference WHERE user_id = puser_id) <= last_case.distance THEN
-            similarity := similarity + 0.9;
+        IF distance + (SELECT get_user_preference(puser_id, 'distance_tolerance')) <= last_case.distance THEN
+            similarity := similarity + (SELECT get_user_preference(puser_id, 'distance_weight'));
         END IF;
 
         -- Restaurant Type
