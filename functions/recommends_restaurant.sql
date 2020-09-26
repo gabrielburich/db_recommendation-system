@@ -11,7 +11,7 @@ CREATE OR REPLACE FUNCTION recommends_restaurant (
 RETURNS TABLE (
     id               INTEGER,
     name             VARCHAR,
-    tp_restaurant    VARCHAR
+    type             VARCHAR
 )
 LANGUAGE plpgsql AS $$
 DECLARE
@@ -37,7 +37,7 @@ BEGIN
         SELECT * INTO restaurant FROM restaurant_information res WHERE res.id = result_calc.id;
         id := restaurant.id;
         name := restaurant.name;
-        tp_restaurant := restaurant.tp_restaurant;
+        type := restaurant.tp_restaurant;
         RETURN NEXT;
 	END LOOP;
 END; $$
