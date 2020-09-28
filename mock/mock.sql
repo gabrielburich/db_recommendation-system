@@ -1,6 +1,5 @@
 -- Create admin user
-INSERT INTO "user" (name, email, password) VALUES ('gburich', 'gburich@gmail.com', 'abc');
-INSERT INTO "user" (name, email, password) VALUES ('admin', 'admin@gmail.com', 'abc');
+INSERT INTO "user" (name, email, password) VALUES ('admin', 'admin@gmail.com', '$2b$10$U.o0H08Gj9.cpWXxwKu76evK.HB3NDMuhOUoXNgu8kCenIGkazVMO');
 
 select * from "user";
 -- User preference
