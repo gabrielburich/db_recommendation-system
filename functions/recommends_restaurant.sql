@@ -37,7 +37,7 @@ BEGIN
         SELECT * INTO restaurant FROM restaurant_information res WHERE res.id = result_calc.id;
         id := restaurant.id;
         name := restaurant.name;
-        type := restaurant.tp_restaurant;
+        type := restaurant.type;
         RETURN NEXT;
 	END LOOP;
 END; $$

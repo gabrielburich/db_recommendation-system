@@ -227,7 +227,7 @@ insert into last_cases (accepts_meal_voucher, tp_restaurant_id, order_time, dist
 
 select * from last_cases;
 
-select * from restaurant;
+
 
 insert into meal (name, description, price, restaurant_id)  values ('Pizza Média', 'Pizza média de frango', 26.50, 13);
 insert into meal (name, description, price, restaurant_id)  values ('Pizza Grande', 'Pizza grande de frango', 36.50, 13);
