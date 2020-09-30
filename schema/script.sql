@@ -92,3 +92,23 @@ create table last_cases
 alter table last_cases owner to postgres;
 -- End last_cases Table definition
 
+-- Start meal Table definition
+create table meal
+(
+	id serial not null,
+	name varchar,
+	description text,
+	price decimal,
+	restaurant_id int not null
+		constraint meal_restaurant_id_fk
+			references restaurant
+);
+
+create unique index meal_id_uindex
+	on meal (id);
+
+alter table meal
+	add constraint meal_pk
+		primary key (id);
+
+-- End meal Table definition
