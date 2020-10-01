@@ -15,8 +15,9 @@ RETURNS TABLE (
 )
 LANGUAGE plpgsql AS $$
 DECLARE
-    result_calc RECORD;
-    restaurant  RECORD;
+    result_calc   RECORD;
+    restaurant    RECORD;
+    previous_ids  INTEGER[];
 BEGIN
     FOR result_calc IN (
         SELECT
@@ -34,10 +35,13 @@ BEGIN
         ORDER BY result.similarity DESC
         LIMIT page_size
     ) LOOP
-        SELECT * INTO restaurant FROM restaurant_information res WHERE res.id = result_calc.id;
-        id := restaurant.id;
-        name := restaurant.name;
-        type := restaurant.type;
-        RETURN NEXT;
+        IF (SELECT (NOT previous_ids @> ARRAY[result_calc.id]) OR (array_length(previous_ids, 1) IS NULL)) THEN
+            previous_ids := array_append(previous_ids, result_calc.id);
+            SELECT * INTO restaurant FROM restaurant_information res WHERE res.id = result_calc.id;
+            id := restaurant.id;
+            name := restaurant.name;
+            type := restaurant.type;
+            RETURN NEXT;
+        END IF;
 	END LOOP;
 END; $$
