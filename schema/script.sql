@@ -112,3 +112,27 @@ alter table meal
 		primary key (id);
 
 -- End meal Table definition
+
+-- Start order Table definition
+create table "order"
+(
+	id serial not null,
+	user_id int
+		constraint order_user_id_fk
+			references "user",
+	restaurant_id int
+		constraint order_restaurant_id_fk
+			references restaurant,
+	meal_id int
+		constraint order_meal_id_fk
+			references meal
+);
+
+create unique index order_id_uindex
+	on "order" (id);
+
+alter table "order"
+	add constraint order_pk
+		primary key (id);
+-- End order Table definition
+
